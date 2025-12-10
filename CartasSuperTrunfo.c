@@ -15,7 +15,7 @@ int main() {
   printf("vomos cadratrar as suas cartas!\n"); //printf é a funções de mostrar em tela
   printf("carta 1\n");    
   char estado1[5];  // funcão char= quer dizer que a variavel é um string,"texto"
-  char codigo1[10]; 
+  char codigo1[10];
   char cidade1[20];
   int populacao1;   //funcão int= quer dizer que a variavel é uma número inteiro
   float area1;   //função float= quer dizer que esta variavel é de número decimal
