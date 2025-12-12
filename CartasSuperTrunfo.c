@@ -100,12 +100,53 @@ int main() {
   // carta 2
   printf("\ncarta 2\n");
   printf("estado: %s\n", estado2); // EX: printf("mostrar em tela string, % o tipo de variavel que foi armazernado", declarar qual a variavel);
-  printf("estado: %s\n", estado2); 
   printf("codigo: %s\n", codigo2);
   printf("cidade: %s\n", cidade2);
   printf("populacao: %d\n", populacao2);
   printf("area: %.2f\n", area2);
   printf("pib: %.2f\n", pib2);
-  printf("numero de pontos turisticos: %d\n", numero_de_pontos_turisticos2);
+  printf("numero de pontos turisticos: %d\n\n", numero_de_pontos_turisticos2);
+  
+
+  float denci_popu1;
+  float denci_popu2;
+
+  denci_popu1 = populacao1 / area1;
+  denci_popu2 = populacao2 / area2;
+  
+  float pib_popo1;
+  float pib_popo2;
+
+  pib_popo1 = pib1 / populacao1;
+  pib_popo2 = pib2 / populacao2;
+
+  printf("carta 1: cidade (%s) valor total do PIB pela quantidade de habitantes: %.2f\n", cidade1, pib_popo1);
+  printf("carta 2: cidade (%s) valor total do PIB pela quantidade de habitantes: %.2f\n\n", cidade2, pib_popo2);
+
+
+  printf("Dencidade populacional por metro quadrado carta 1: %.2f hab/km²\n", denci_popu1);
+  printf("Dencidade populacional por metro quadrado carta 2: %.2f hab/km²\n\n", denci_popu2);
+
+  printf("carta com o menor numero de habitantes vence a partida!\n");
+  printf("%s (%s): %d habitantes\n", cidade1,estado1,populacao1);
+  printf("%s (%s): %d habitantes\n", cidade2,estado2,populacao2);
+
+
+
+
+  if (populacao1 > populacao2)
+  {printf("carta 2 (%s) venceu!", cidade2);
+    /* code */
+  }else
+  {printf("carta 1 (%s) venceu!", cidade1);
+
+   
+  }
+  
+  
+
+
+
   return 0;
+
 }
