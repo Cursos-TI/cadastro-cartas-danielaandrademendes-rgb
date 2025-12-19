@@ -1,11 +1,24 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
 int main() {
+    int opcao;
+    printf("Bem vido ao jogo Super Trufo!\n");
+    printf("escolha uma das seguites opcoes\n");
+    printf("1. Iniciar jogo\n");
+    printf("2. Regras do jogo\n");
+    printf("3. Sair\n");
+    printf("Escolha a opcao\n");
+    scanf("%d", &opcao);
 
+
+  switch (opcao)
+    {
+    case 1:
   //esta primeira parde do código é para definição das variáveis para armazenar as dados das cidades.
   //as funcões servem para dizer qual tipo de variavel esta sendo armazernadas.
   // variavel é uma caixa para armazernar dados, valores ou textos.
@@ -21,6 +34,29 @@ int main() {
   float area1;   //função float= quer dizer que esta variavel é de número decimal
   float pib1;
   int numero_de_pontos_turisticos1;
+
+  srand(time(0));
+  populacao1= rand() % 100000 + 1; //número entre 1 100
+  area1=  rand() % 100000 + 1; //número entre 1 100
+  pib1= rand() % 100000 + 1; //número entre 1 100
+  numero_de_pontos_turisticos1= rand() % 100 + 1; //número entre 1 100
+
+  // entrada de dados da carta 1 :
+  // carta 1
+  printf("Digite as duas primeiras letras estado da carta 1; \n");  //o printf vai mostra em tela o texto. 
+  scanf("%s", estado1);   //scanf receber o dado e guarda na variavel estado1.  
+  printf("Digite o codigo da carta, a letra do estado seguida de numeros: \n"); 
+  scanf("%s", codigo1);  
+  printf("Digite o nome da cidade da carta 1: \n");  
+  scanf("%s", cidade1);  
+   /*printf("Digite o numero de habitantes da cidade da carta 1: \n");  
+  scanf("%d", &populacao1);  
+  printf("Digite a area da cidade em quilometros quadrados carta 1: \n"); 
+  scanf("%f", &area1); 
+  printf("Digite o produto interno bruto PIB da cidade da carta 1: \n"); 
+  scanf("%f", &pib1);
+  printf("Digite o numero de pontos turisticos da cidade da carta 1: \n"); 
+  scanf("%d", &numero_de_pontos_turisticos1); */
 
   //variaveis de cadastro da segunda carta:
   printf("carta 2\n");
@@ -45,27 +81,12 @@ int main() {
   %d número inteiro
   %f número decimal
   */
-
-  // entrada de dados das cartas 1 e 2:
-
-  // carta 1
-  printf("Digite as duas primeiras letras estado da carta 1; \n");  //o printf vai mostra em tela o texto. 
-  scanf("%s", estado1);   //scanf receber o dado e guarda na variavel estado1.  
-  printf("Digite o codigo da carta, a letra do estado seguida de numeros: \n"); 
-  scanf("%s", codigo1);  
-  printf("Digite o nome da cidade da carta 1: \n");  
-  scanf("%s", cidade1);  
-  printf("Digite o numero de habitantes da cidade da carta 1: \n");  
-  scanf("%d", &populacao1);  
-  printf("Digite a area da cidade em quilometros quadrados carta 1: \n"); 
-  scanf("%f", &area1); 
-  printf("Digite o produto interno bruto PIB da cidade da carta 1: \n"); 
-  scanf("%f", &pib1);
-  printf("Digite o numero de pontos turisticos da cidade da carta 1: \n"); 
-  scanf("%d", &numero_de_pontos_turisticos1); 
-
-  // mesma coisa para carta 2
-
+  srand(time(0));
+  populacao2= rand() % 100000 + 1; //número entre 1 100000
+  area2=  rand() % 100000 + 1; //número entre 1 100000
+  pib2= rand() % 100000 + 1; //número entre 1 100000
+  numero_de_pontos_turisticos2= rand() % 100 + 1; //número entre 1 100
+  // entrada de dados das carta 2:
   // carta 2
   printf("Digite as duas primeiras letras estado da carta 2; \n");   // EX: o printf vai mostra em tela o texto e o \n pular uma linha.
   scanf("%s", estado2);    // Ex: scanf receber o dado e guarda na variavel estado2.
@@ -73,14 +94,14 @@ int main() {
   scanf("%s", codigo2);
   printf("Digite o nome da cidade da carta 2: \n");
   scanf("%s", cidade2);
-  printf("Digite o numero de habitantes da cidade da carta 2: \n");
+  /*printf("Digite o numero de habitantes da cidade da carta 2: \n");
   scanf("%d", &populacao2);
   printf("Digite a area da cidade em quilometros quadrados da carta 2: \n");
   scanf("%f", &area2);
   printf("Digite o produto interno bruto PIB da cidade da carta 2: \n");
   scanf("%f", &pib2);
   printf("Digite o numero de pontos turisticos da cidade da carta 2: \n");
-  scanf("%d", &numero_de_pontos_turisticos2);
+  scanf("%d", &numero_de_pontos_turisticos2);  */
   
   //na terceira parte do código: esta parta do código fonte, vamos imprimir as informações dadas pelo usuário salvas nas variaveis.
   //o printf nesta parte do código vai mostrar o texto em tela e o dado que fio armazenado na varial.
@@ -107,7 +128,98 @@ int main() {
   printf("pib: %.2f\n", pib2);
   printf("numero de pontos turisticos: %d\n\n", numero_de_pontos_turisticos2);
   
+  int resultado1, resultado2;
+  char primeiroatributo, segundoatributo;
 
+    //comparação dos resultados
+    printf("Bem vido ao jogo!\n");
+    printf("escolha o primeiro atirbuto para comparacao\n");
+    printf("P. populacao\n");
+    printf("A. area\n");
+    printf("I. pib\n");
+    printf("N. numero de pontos turisticos\n");
+    printf("Escolha a comparacao\n");
+    scanf(" %c", &primeiroatributo);
+        
+      switch (primeiroatributo){   //todo este codigo esta dentro do switch
+      case 'P':
+      case 'p':      
+      printf("Voce escolheu a opcao: Populacao\n");
+      resultado1= populacao1 > populacao2 ? 1 : 0;
+      break;
+      case 'A':
+      case 'a':
+      printf("Voce escolheu a opcao: Area\n");
+      resultado1= area1 > area2 ? 1 : 0;
+      break;
+      case 'I':
+      case 'i':
+      printf("Voce escolheu a opcao: PIB\n");
+      resultado1=  pib1 > pib2 ? 1 : 0;
+      break;
+      case 'N':
+      case 'n':
+      printf("Voce escolheu a opcao: recuo\n");
+      resultado1= numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2 ? 1 : 0;
+      break;
+      default:
+      printf("opcao invalida");
+      break;
+      }
+        printf("Bem vido ao jogo!\n\n");
+        printf("escolha o segudo atirbuto\n");
+        printf("P. populacao\n");
+        printf("A. area\n");
+        printf("I. pib\n");
+        printf("N. numero de pontos turisticos\n");
+        printf("Escolha a comparacao\n");
+        scanf(" %c", &segundoatributo); 
+           
+          if (primeiroatributo == segundoatributo){
+              printf("voce escolheu o mesmo atritudo\n");
+              return 0;
+              }switch (segundoatributo){
+               case 'P':
+               case 'p':
+               printf("Voce escolheu a opcao: Populacao\n");
+               resultado2= populacao1 > populacao2 ? 1 : 0;
+               break;
+               case 'A':
+               case 'a':
+               printf("Voce escolheu a opcao: Area\n");
+               resultado2 = area1 > area2 ? 1 : 0;
+               break;
+               case 'I':
+               case 'i':
+               printf("Voce escolheu a opcao: PIB\n");
+               resultado2 =  pib1 > pib2 ? 1 : 0;
+               break;
+               case 'N':
+               case 'n':
+               printf("Voce escolheu a opcao: recuo\n");
+               resultado2 = numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2 ? 1 : 0;
+               break;
+               default:
+               printf("opcao invalida");
+               break;
+              }
+
+        if (resultado1 && resultado2){  // se resultado1 == resultado2 a 1
+         printf("Parabens, voce venceu\n");
+        }else if (resultado1 || resultado2){ // 0 e 1 ou 1 e 0
+         printf("Empatou");
+        }else
+         printf("infelismente voce perdeu\n"); //0 e 0
+         break;
+
+
+
+
+
+
+
+
+   /*
   float denci_popu1;
   float denci_popu2;
 
@@ -137,16 +249,22 @@ int main() {
   if (populacao1 > populacao2)
   {printf("carta 2 (%s) venceu!", cidade2);
     /* code */
-  }else
-  {printf("carta 1 (%s) venceu!", cidade1);
-
-   
-  }
-  
+  //}else
+  //{printf("carta 1 (%s) venceu!", cidade1);
+  //}
   
 
 
-
-  return 0;
-
+  
+  case 2:
+  printf("regras\n");
+  printf("Neste jogo Super Trunfo de cidades, o jogador inicia a partida cadastrando duas cartas, cada uma representando uma cidade com atributos como população, área, PIB e número de pontos turísticos. Em seguida, o jogador deve escolher dois atributos diferentes para realizar a comparação entre as cartas. Em cada comparação, vence o atributo que possuir o maior valor. O resultado final da rodada é definido da seguinte forma: se a carta vencer nos dois atributos, o jogador ganha; se vencer em apenas um atributo, ocorre empate; e se perder nos dois atributos, o jogador perde a rodada. A escolha do mesmo atributo duas vezes ou de opções inválidas torna a jogada inválida.");
+  break;
+  case 3:
+  printf("Saindo do jogo...\n");
+  break;
+  default:
+  printf("opcao invalida\n");
+  break;
+    }
 }
