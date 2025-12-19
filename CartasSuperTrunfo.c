@@ -49,15 +49,7 @@ int main() {
   scanf("%s", codigo1);  
   printf("Digite o nome da cidade da carta 1: \n");  
   scanf("%s", cidade1);  
-   /*printf("Digite o numero de habitantes da cidade da carta 1: \n");  
-  scanf("%d", &populacao1);  
-  printf("Digite a area da cidade em quilometros quadrados carta 1: \n"); 
-  scanf("%f", &area1); 
-  printf("Digite o produto interno bruto PIB da cidade da carta 1: \n"); 
-  scanf("%f", &pib1);
-  printf("Digite o numero de pontos turisticos da cidade da carta 1: \n"); 
-  scanf("%d", &numero_de_pontos_turisticos1); */
-
+   
   //variaveis de cadastro da segunda carta:
   printf("carta 2\n");
   char estado2[5];
@@ -94,14 +86,6 @@ int main() {
   scanf("%s", codigo2);
   printf("Digite o nome da cidade da carta 2: \n");
   scanf("%s", cidade2);
-  /*printf("Digite o numero de habitantes da cidade da carta 2: \n");
-  scanf("%d", &populacao2);
-  printf("Digite a area da cidade em quilometros quadrados da carta 2: \n");
-  scanf("%f", &area2);
-  printf("Digite o produto interno bruto PIB da cidade da carta 2: \n");
-  scanf("%f", &pib2);
-  printf("Digite o numero de pontos turisticos da cidade da carta 2: \n");
-  scanf("%d", &numero_de_pontos_turisticos2);  */
   
   //na terceira parte do código: esta parta do código fonte, vamos imprimir as informações dadas pelo usuário salvas nas variaveis.
   //o printf nesta parte do código vai mostrar o texto em tela e o dado que fio armazenado na varial.
@@ -159,7 +143,7 @@ int main() {
       break;
       case 'N':
       case 'n':
-      printf("Voce escolheu a opcao: recuo\n");
+      printf("Voce escolheu a opcao: numero de pontos turisticos \n");
       resultado1= numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2 ? 1 : 0;
       break;
       default:
@@ -252,9 +236,6 @@ int main() {
   //}else
   //{printf("carta 1 (%s) venceu!", cidade1);
   //}
-  
-
-
   
   case 2:
   printf("regras\n");
